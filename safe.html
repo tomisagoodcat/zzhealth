@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>富硒曹妃甸香米</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <script src="static/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <script src="static/js/raphael.2.1.0.min.js"></script>
+    <script src="static/js/justgage.1.0.1.min.js"></script>
+</head>
+<style>
+    .nav-title span{
+        background-color: #1FC1AA;
+        width: 30%;
+        color: #fff;
+        font-size: 1em;
+        text-align: center;
+        padding: 10px 0;
+        display: block;
+        float: left;
+    }
+
+    .triangle-bottomleft{
+        width: 0;
+        height: 0;
+        border-bottom: 40px solid #1FC1AA;
+        border-right: 40px solid transparent;
+        float: left;
+    }
+
+    #description p{
+        font-size: 12px;
+    }
+
+    #description .table thead{
+        background-color: #ccffcc;
+    }
+
+    #description tbody tr td:nth-child(2){
+        background-color: #00ff00;
+    }
+    #description2{
+        margin-top: 10px;
+        font-family:'楷体';
+    }
+
+    #description2 img{
+        width: 15px;
+        height: 15px;
+        margin-bottom: 0;
+    }
+    #g1{
+        width:300px; 
+        height:240px;
+        display: inline-block;
+    }
+    #rate{
+    margin-top:30px;
+    }
+    
+</style>
+<body class="container-fluid">
+    <header class="row">
+        <div class="col-xs-6 col-sm-6" id="title">
+            <h4>产品名：富硒曹妃甸香米</h4>
+            <h4>批次：zbj3140080</h4>
+        </div>
+        <div class="col-xs-6 col-sm-6" id="logo">
+            <!--<img src="static/images/logo.png">-->
+            <a id="enter-index" style='display:block;text-decoration:none' href='http://weidian.com/?userid=311933834&wfr=wx&from=singlemessage&isappinstalled=1'>
+            <img src="static/images/card.png">
+            进入微店
+        </a>
+        </div>
+    </header>
+    <ul class="row" id="nav">
+        <li class="nav-col nav-col-active"><a href="safe.html"><h7>食品安全</h7></li>
+        <li class="nav-col"><a href="index.html"><h7>食品质量</h7></a></li>
+        <li class="nav-col"><a href="effect.html">功效</a></li>
+        <li class="nav-col"><a href="producer.html">种植者</a></li>
+        <li class="nav-col"><a href="factory.html">种植地</a></li>
+    </ul>
+    
+    <span><a href="http://www.jslh.org" style="color: #b8b8b8;font-family: '楷体';font-size: 12px;text-decoration: underline">检测单位:江苏省理化测试中心</a></span>
+        <br>
+    <section class="row" id="nav-title">
+        <img src="static/images/seal.png">
+        <a href="#report">查看详细报告</a>
+    </section>
+    <section class="row nav-title">
+        <span>总体得分</span>
+        <div class="triangle-bottomleft"></div>
+    </section>
+
+    <!--
+    <div class="row" style="padding-top: 20px">
+        <div class="col-sm-4 col-xs-2"></div>
+        <div class="col-sm-4 col-xs-8">
+            <img src="static/images/limit.png" style="width: 180px;height: 180px">
+        </div>
+        <div class="col-sm-4 col-xs-2"></div>
+    </div>
+    -->
+    <div id="g1"></div>
+    <section class="row nav-title">
+        <span>安全认证</span>
+        <div class="triangle-bottomleft"></div>
+    </section>
+    <div class="row" id="rate">
+        <div class="col-xs-12 col-sm-12">
+            <div class="country-area">
+                <img src="static/images/china.png" class="rate-country">
+                <span>中国食品安全认证</span>
+            </div>
+            <div class="rating-start">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+            </div>
+        </div>
+        <!--<div class="col-xs-12 col-sm-12">
+            <div class="country-area">
+                <img src="static/images/japan.png" class="rate-country">
+                <span>日本食品安全认证</span>
+            </div>
+            <div class="rating-start">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/empty.png">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12">
+            <div class="country-area">
+                <img src="static/images/america.png" class="rate-country">
+                <span>美国食品安全认证</span>
+            </div>
+            <div class="rating-start">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/half.png">
+            </div>
+        </div> -->
+        <div class="col-xs-12 col-sm-12">
+            <div class="country-area">
+                <img src="static/images/europe.png" class="rate-country">
+                <span>欧盟食品安全认证</span>
+            </div>
+            <div class="rating-start">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+                <img src="static/images/full.png">
+            </div>
+        </div>
+    </div>
+    <div id="distance"></div>
+    <div class="row" id="description2">
+        <table class="table">
+            <thead>
+            <tr>
+                <td colspan="2">
+                    <span style="font-size: 14px;">符号说明</span>
+                    <small>指标体系技术支持:南京大学环境学院,加拿大特伦特大学(Trent University)©树信智信息科技有限公司版权所有</small>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <img src="static/images/full.png"/>
+                </td>
+                <td>
+                    1星:通过基准合格标准
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="static/images/full.png"/>
+                    <img src="static/images/full.png"/>
+                </td>
+                <td>
+                    2星:达到2倍基准合格标准
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="static/images/full.png"/>
+                    <img src="static/images/full.png"/>
+                    <img src="static/images/full.png"/>
+                </td>
+                <td>
+                    3星:达到3倍基准合格标准
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <section class="row nav-title" style="margin-top: 20px">
+    <span>指标信息</span>
+    <div class="triangle-bottomleft"></div>
+</section>
+<div class="row" id="description">
+    <table class="table">
+        <thead>
+        <tr>
+            <td>报告名称(单位均为ppb)</td>
+            <td>含量</td>
+            <td>国标</td>
+            
+            <td>欧标</td>
+            
+            <td>百分比</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>铅</td>
+            <td>0.014</td>
+            <td>200</td>
+            <td>200</td>
+            
+            <td>0.00007</td>
+        </tr>
+        <tr>
+            <td>镉</td>
+            <td>0.0082</td>
+            <td>200</td>
+            <td>200</td>
+            
+            <td>0.000041</td>
+        </tr>
+        <tr>
+            <td>汞</td>
+            <td>0.0034</td>
+            <td>20</td>
+            <td>500</td>
+            
+            <td>0.00017</td>
+        </tr>
+        <tr>
+            <td>砷</td>
+            <td>0.023</td>
+            <td>150</td>
+            <td></td>
+            <td>0.000153</td>
+            
+        </tr>
+        <tr>
+            <td>铬</td>
+            <td>0.0076</td>
+            <td>1000</td>
+            <td></td>
+            <td>7.6E-06</td>
+            
+        </tr>
+        <tr>
+            <td>镍</td>
+            <td>0.109</td>
+            <td>1000</td>
+            <td></td>
+            <td>0.000109</td>
+            
+        </tr>
+        <tr>
+            <td>锡</td>
+            <td>0.004</td>
+            <td>250000</td>
+            <td>200000</td>
+            <td>1.6E-08</td>
+            
+        </tr>
+        </tbody>
+    </table>
+    <p><b>计算方式说明:</b>风险商的计算,参考美国EPA制定的计算方法和标准。</p>
+    <p style="font-size: 12px"><b>风险商分级参考文献:<br></b>
+        <ul style="font-size: 8px">
+            <li>[1]Lim H S, Lee J S, Chon H T, et al. Heavy metal contamination and health risk assessment in the vicinity of the abandoned Songcheon Au–Ag mine in Korea[J]. Journal of Geochemical Exploration, 2008, 96(2): 223-230.</li>
+            <li>[2]Finger S E, Farag A M, Nimick D A, et al. Synthesis of water, sediment, and biological data using hazard quotients to assess ecosystem health[J]. Integrated investigations of environmental effects of historical mining in the Basin and Boulder mining districts, Boulder River watershed, Jefferson County, Montana: US Geological Survey Professional Paper, 2004, 1652: 29-48.</li>
+            <li>[3]Synthesis of Water, Sediment, and Biological Data Using Hazard Quotients to Assess Ecosystem Health</li>
+        </ul>
+    </p>
+</div>
+<section class="row nav-title" id="report">
+    <span style="background-color: #c5c5c5">纸质检验报告</span>
+    <div class="triangle-bottomleft" style="border-bottom-color: #c5c5c5"></div>
+</section>
+<div class="row">
+    <div class="col-sm-12">
+        <img src="static/images/image0001.jpg" width="100%">
+        <img src="static/images/image0002.jpg" width="100%">
+        <img src="static/images/image0003.jpg" width="100%">
+    </div>
+</div>
+<div style="display: none">
+    <script src="http://s4.cnzz.com/z_stat.php?id=1254849470&web_id=1254849470" language="JavaScript"></script>
+</div>
+</body>
+<script>
+    var g1;
+    window.onload=function(){
+        var g1= new JustGage({
+            id:"g1",
+            value:97.5,
+            min:0,
+            max:100,
+            title:"食品安全得分*",
+            label:"分",
+            levelColors: [
+                "#FF0000",
+                "#FFFF00",
+                "#008000"
+            ]   
+        });
+
+        
+    };
+    (function(){
+        $(document).ready(function () {
+            //星星动画
+            $('#rate .col-sm-12').each(function (a,b) {
+                var data = $(b).find('.rating-start>img');
+                var queueList = [];
+                for(var i=0;i<data.length;i++){
+                    queueList.push(function (dom,i) {
+                        $(dom).delay(i*100).fadeIn()
+                    }(data[i],i));
+                }
+                $('#rate').queue('start-animate',queueList);
+                $('#rate').dequeue('start-animate');
+            });
+
+            //footer调整
+            /*
+            var clientHeight = $(window).height();
+            var documentHeight = $('#distance').offset().top+$('#description').height();
+            if(clientHeight > documentHeight){
+                $('#description').css('margin-top',$(window).height()-$('#distance').offset().top-$('#description').height());
+            }*/
+            
+        })
+    })();
+</script>
+<style>
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+        border: none!important;
+    }
+
+    #description .table tbody tr td:first-child{
+        padding-left: 15px;
+    }
+</style>
+<div style="display: none">
+    <script src="http://s4.cnzz.com/z_stat.php?id=1254849470&web_id=1254849470" language="JavaScript"></script>
+</div>
+</html>
