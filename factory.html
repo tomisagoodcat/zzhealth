@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <title>富硒曹妃甸香米</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+    <script src="static/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+    <script type="text/javascript">
+        function showDetile(){
+            document.getElementById("Layer1").style.display = "block";      
+        }
+        function hiddenDetile(){
+            document.getElementById("Layer1").style.display = "none"; 
+            
+        }
+    </script>
+</head>
+<body class="container-fluid">
+<header class="row">
+    <div class="col-xs-6 col-sm-6" id="title">
+        <h4>产品名：富硒曹妃甸香米</h4>
+        <h4>批次：zbj3140080</h4>
+    </div>
+    <div class="col-xs-6 col-sm-6" id="logo">
+        <a id="enter-index" style='display:block;text-decoration:none' href='http://weidian.com/?userid=311933834&wfr=wx&from=singlemessage&isappinstalled=1'>
+            <img  src="static/images/card.png">
+            进入微店
+        </a>
+    </div>
+</header>
+<ul class="row" id="nav">
+    <li class="nav-col"><a href="safe.html">食品安全</a></li>
+    <li class="nav-col"><a href="index.html">食品质量</a></li>
+    <li class="nav-col"><a href="effect.html">功效</a></li>
+    <li class="nav-col"><a href="producer.html">种植者</a></li>
+    <li class="nav-col  nav-col-active"><a href="factory.html">种植地</a></li>
+</ul>
+<div id="Layer1" class="panel panel-default" style="display:none;position:absolute;z-index:1;">
+
+           <img src="static/images/view.jpg"> 曹妃甸至今已有5500多年的历史；其名字的由来可追溯到唐朝初年，当年唐王李世民跨海征东，得胜还朝。随军东征的有个妃子叫曹娴，姿容秀丽，不但能歌善舞，而且会吟诗作画。她见唐王几年鞍马劳顿，就百般体贴唐王。由于曹妃体质虚弱，船行至滦南县海域，竟身染重病。经随军太医调治，仍呕吐不止。船行经这个小岛唐王命龙舟拢岸，扶曹妃上岛治疗。曹妃病情日趋严重，后竟死在岛上，李世民痛失爱妃，遂下旨在岛上建三层大殿，塑曹妃像，赐名曹妃殿。从此，渔民海客四时香火不断，小岛得名曹妃甸。
+
+</div> 
+<div class="col-sm-12 col-xs-12">
+    <div id="map">
+    </div>
+
+</div>
+
+
+<div class="panel panel-default navbar-fixed-bottom">
+    <div class="panel-body">
+        曹妃甸种植基地
+        <span onMouseOver="showDetile();" onMouseOut="hiddenDetile();">详情</span>
+    </div>
+
+    <div class="panel-footer">
+        地址：河北省曹妃甸
+    </div>
+</div>
+<script>
+   
+    // var markerArr = [
+    //     { title: "名称：曹妃甸", point: "118.384161,31.133664", address: "河北 曹妃甸", tel: "18202731234" }
+    // ];
+
+    // function map_init() {
+        var map = new BMap.Map("map", {mapType:BMAP_HYBRID_MAP}); // 创建Map实例
+        //var point = new BMap.Point(110.403434,31.469026); //地图中心点
+        var point = new BMap.Point(118.39041670,39.1348583);
+        map.centerAndZoom(point, 6); // 初始化地图,设置中心点坐标和地图级别。
+        map.enableScrollWheelZoom(true); //启用滚轮放大缩小
+        var content = '<div id="content" style="margin:0;line-height:20px;padding:2px;">' +
+                    '<img src="static/images/caofeidian.jpg" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+                    '地址：河北省曹妃甸种植基地<br/>电话：(010)88888888<br/>简介：曹妃甸至今已有5500多年的历史；其名字的由来可追溯到唐朝初年，当年唐王李世民跨海征东，得胜还朝。<span onMouseOver="showDetile();" onMouseOut="hiddenDetile();">详情</span>' +
+                  '</div>';
+
+        //创建检索信息窗口对象
+        var searchInfoWindow = null;
+        searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+            title  : "曹妃甸种植基地",      //标题
+            width  : 300,             //宽度
+            height : 125,            //高度
+            panel  : "panel",         //检索结果面板
+            enableAutoPan : true,     //自动平移
+            searchTypes   :[
+                BMAPLIB_TAB_SEARCH,   //周边检索
+                BMAPLIB_TAB_TO_HERE,  //到这里去
+                BMAPLIB_TAB_FROM_HERE //从这里出发
+            ]
+        });
+        // var searchInfoWindow1 = new BMapLib.SearchInfoWindow(map, "信息框1内容", {
+        // title: "信息框1", //标题
+        // panel : "panel", //检索结果面板
+        // enableAutoPan : true, //自动平移
+        // searchTypes :[
+        //     BMAPLIB_TAB_FROM_HERE, //从这里出发
+        //     BMAPLIB_TAB_SEARCH   //周边检索
+        // ]
+        // });
+    
+
+        var marker = new BMap.Marker(point); //创建marker对象
+        
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);//标注动画
+        marker.addEventListener("click", function() {
+            searchInfoWindow.open(marker);
+        })
+        map.addOverlay(marker); //在地图中添加marker
+
+        var label =new BMap.Label("地址：河北曹妃甸",{offset:new BMap.Size(20,-10)});
+        marker.setLabel(label);
+        //向地图中添加缩放控件
+        var ctrlNav = new window.BMap.NavigationControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT,
+            type: BMAP_NAVIGATION_CONTROL_LARGE
+        });
+        map.addControl(ctrlNav);
+
+        //向地图中添加缩略图控件
+        var ctrlOve = new window.BMap.OverviewMapControl({
+            anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+            isOpen: 1
+        });
+        map.addControl(ctrlOve);
+
+        //向地图中添加比例尺控件
+        var ctrlSca = new window.BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_BOTTOM_LEFT
+        });
+        map.addControl(ctrlSca);
+
+        
+
+
+        
+        
+
+
+        // var point = new Array(); //存放标注点经纬信息的数组
+        // var marker = new Array(); //存放标注点对象的数组
+        // var info = new Array(); //存放提示信息窗口对象的数组
+        // for (var i = 0; i < markerArr.length; i++) {
+        //     var p0 = markerArr[i].point.split(",")[0]; //
+        //     var p1 = markerArr[i].point.split(",")[1]; //按照原数组的point格式将地图点坐标的经纬度分别提出来
+        //     point[i] = new window.BMap.Point(p0, p1); //循环生成新的地图点
+        //     marker[i] = new window.BMap.Marker(point[i]); //按照地图点坐标生成标记
+        //     map.addOverlay(marker[i]);
+        //     marker[i].setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+        //     var label = new window.BMap.Label(markerArr[i].title, { offset: new window.BMap.Size(20, -10) });
+        //     marker[i].setLabel(label);
+        //     info[i] = new window.BMap.InfoWindow("<p style='font-size:12px;lineheight:1.8em;'>" + markerArr[i].title + "</br>地址：" + markerArr[i].address + "</br> 电话：" + markerArr[i].tel + "</br></p>"); // 创建信息窗口对象
+        // }
+        // marker[0].addEventListener("mouseover", function () {
+        //     this.openInfoWindow(info[0]);
+        // });
+        // marker[1].addEventListener("mouseover", function () {
+        //     this.openInfoWindow(info[1]);
+        // });
+        // marker[2].addEventListener("mouseover", function () {
+        //     this.openInfoWindow(info[2]);
+    //     // });
+    // }
+    // //异步调用百度js
+    // function map_load() {
+    //     var load = document.createElement("script");
+    //     load.src = "http://api.map.baidu.com/api?v=1.4&callback=map_init";
+    //     document.body.appendChild(load);
+    // }
+    // window.onload = map_load;
+</script>
+<style>
+    /*fix 空白的 bug*/
+    label{
+        max-width: none;
+    }
+</style>
+</body>
+<div style="display: none">
+    <script src="http://s4.cnzz.com/z_stat.php?id=1254849470&web_id=1254849470" language="JavaScript"></script>
+</div>
+</html>
