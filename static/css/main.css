@@ -27,7 +27,28 @@ header{
     width: 100px;
     height: 30px;
 }
-
+#mycan{
+    width:100%; 
+    height:200px;
+    background:url("../images/bg.png");
+    background-size: cover;
+}
+#wrapper{
+    padding-left:15%;
+    margin-top: -60px;
+}
+#shuoming p{
+    font-size: 1px;
+    margin-left: 15px;
+}
+#red{
+    background-color: rgba(192,80,78,1);
+    border: solid 1px rgba(255,255,255,1);
+}
+#blue{
+    background-color: rgba(79,192,188,1);
+    border: solid 1px rgba(255,255,255,1);
+}
 #enter-index{
     float: right;
     background-color: #fff;
