@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>品牌红茶金丝红</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	
+
   <style>
     canvas{
       -moz-user-select: none;
@@ -41,13 +41,22 @@
     <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
     <script type="text/javascript">
         function showDetile(){
-            document.getElementById("Layer1").style.display = "block";      
+            document.getElementById("Layer1").style.display = "block";
         }
         function hiddenDetile(){
-            document.getElementById("Layer1").style.display = "none"; 
-            
+            document.getElementById("Layer1").style.display = "none";
+
         }
     </script>
+    <style>
+      .navbar-fixed-bottom{
+        position: static;
+        margin-top: 330px;
+      }
+      #map{
+        height: 300px;
+      }
+    </style>
 </head>
 <body class="container-fluid">
 <header class="row">
@@ -68,14 +77,14 @@
     <li class="nav-col"><a href="effect.html">功效</a></li>
     <li class="nav-col"><a href="index.html">营养质量</a></li>
     <li class="nav-col"><a href="producer.html">种植履历</a></li>
- 
+
 </ul>
 <div id="Layer1" class="panel panel-default" style="display:none;position:absolute;z-index:1;">
   <img src="static/images/view.jpg"/>
   <br/>
 农产品气候品质指的是影响农产品品质的气候条件，农产品气候品质认证指的是通过有气候认证资质的第三方对影响农产品品质的气候条件优劣等级评定，利用认证结果对农产品和其产地气候条件进行标识，提高农产品的知名度和市场竞争力。
 
-</div> 
+</div>
 <div class="col-sm-12 col-xs-12">
     <div id="map">
     </div>
@@ -196,7 +205,7 @@
     </div>
 </div>
 <script>
-   
+
     // var markerArr = [
     //     { title: "名称：曹妃甸", point: "118.384161,31.133664", address: "河北 曹妃甸", tel: "18202731234" }
     // ];
@@ -235,10 +244,10 @@
         //     BMAPLIB_TAB_SEARCH   //周边检索
         // ]
         // });
-    
+
 
         var marker = new BMap.Marker(point); //创建marker对象
-        
+
         marker.setAnimation(BMAP_ANIMATION_BOUNCE);//标注动画
         marker.addEventListener("click", function() {
             searchInfoWindow.open(marker);
@@ -267,11 +276,11 @@
         });
         map.addControl(ctrlSca);
 
-        
 
 
-        
-        
+
+
+
 
 
         // var point = new Array(); //存放标注点经纬信息的数组
