@@ -200,7 +200,7 @@ header{
 
 .nutrition-list>.col-xs-5>img{
     width: 20%;
-    display: none;
+    display: block;
 }
 
 .nutrition-list>.col-xs-5>span{
